@@ -3,9 +3,12 @@ services:
   app:
     build: .
     volumes:
-      - .:/app
+      - app_data_cont:/app
     container_name: cp-alert
     restart: always
     ports:
       - 4010:4010
     env_file: .env
+
+volumes:
+  app_data_cont:
